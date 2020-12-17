@@ -1,0 +1,5 @@
+numpy==1.19.0
+networkx==2.5
+matplotlib==3.3.3
+joblib==0.17.0
+pyyaml==5.3.1

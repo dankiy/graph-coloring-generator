@@ -1,0 +1,60 @@
+name : 'example'
+
+output_path : '../data/example_dataset/'
+num_workers : 4
+seed : 0
+
+generators : {
+  interval : {
+    num_samples : 10,
+    params : {
+      n : {
+        distribution : normal,
+        range : [10, 100]
+      }
+    }
+  },
+  erdos_renyi : {
+    num_samples : 10,
+    params : {
+      n : {
+        distribution : normal, 
+        range : [10, 100]
+      },
+      p : {
+        distribution : uniform,
+        range : [0.3, 0.5]
+      }
+    }
+  },
+  barabasi_albert : {
+    num_samples : 10, 
+    params : {
+      n : {
+        distribution : normal,
+        range : [10, 100]
+      },
+      p : {
+        distribution : uniform,
+        range : [3, 5]
+      }
+    }
+  },
+  watts_strogatz : {
+    num_samples : 10,
+    params : {
+      n : {
+        distribution : normal, 
+        range : [10, 100]
+      },
+      k : {
+        distribution : uniform,
+        range : [4, 4]
+      },
+      p : {
+        distribution : uniform,
+        range : [0.1, 0.3]
+      }
+    }
+  }
+}
