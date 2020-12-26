@@ -7,53 +7,66 @@ seed : 0
 generators : {
   interval : {
     num_samples : 10,
+    subfolder : interval,
     params : {
       n : {
         distribution : normal,
-        range : [10, 100]
+        range : [10, 100],
+        type : int
       }
     }
   },
   erdos_renyi : {
     num_samples : 10,
+    subfolder : erdos_renyi,
     params : {
       n : {
         distribution : normal, 
-        range : [10, 100]
+        range : [10, 100],
+        type : int
       },
       p : {
         distribution : uniform,
-        range : [0.3, 0.5]
+        range : [0.3, 0.5],
+        type : float
       }
     }
-  },
+  }
+}
   barabasi_albert : {
     num_samples : 10, 
+    subfolder : barabasi_albert,
     params : {
       n : {
         distribution : normal,
-        range : [10, 100]
+        range : [10, 100],
+        type : int
       },
       p : {
         distribution : uniform,
-        range : [3, 5]
+        range : [3, 5],
+        type : int
       }
     }
   },
   watts_strogatz : {
     num_samples : 10,
+    subfolder : watts_strogatz,
     params : {
       n : {
         distribution : normal, 
-        range : [10, 100]
+        range : [10, 100],
+        type : int
       },
       k : {
         distribution : uniform,
-        range : [4, 4]
+        range : [4, 4],
+        type : int
       },
       p : {
         distribution : uniform,
-        range : [0.1, 0.3]
+        range : [0.1, 0.3],
+        type : float
       }
     }
   }
