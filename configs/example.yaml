@@ -1,6 +1,6 @@
 name : 'example'
 
-output_path : '../data/example_dataset/'
+output_path : 'data/example_dataset/'
 num_workers : 4
 seed : 0
 
@@ -31,8 +31,7 @@ generators : {
         type : float
       }
     }
-  }
-}
+  },
   barabasi_albert : {
     num_samples : 10, 
     subfolder : barabasi_albert,
@@ -42,7 +41,7 @@ generators : {
         range : [10, 100],
         type : int
       },
-      p : {
+      m : {
         distribution : uniform,
         range : [3, 5],
         type : int

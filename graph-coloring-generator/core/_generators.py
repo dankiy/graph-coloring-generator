@@ -1,3 +1,4 @@
+import os
 import networkx as nx
 
 from abc import ABCMeta, abstractmethod
@@ -34,8 +35,10 @@ class BaseGenerator(metaclass=ABCMeta):
         nx.write_gpickle(G, save_path)
 
     def save(self, output_path, num_workers):
+        if not os.path.exists(f'{output_path}/{self.subfolder}'):
+            os.makedirs(f'{output_path}/{self.subfolder}')
         Parallel(n_jobs=num_workers, verbose=0)(
-            delayed(self._save_instance(f'{output_path}/{self.subfolder}/{str(idx)}.gpickle'))
+            delayed(self._save_instance)(f'{output_path}/{self.subfolder}/{str(idx)}.gpickle')
                 for idx in range(self.num_samples))   
 
 class IntervalGenerator(BaseGenerator):
